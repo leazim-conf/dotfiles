@@ -1,0 +1,76 @@
+# Section: Menu
+menu.border.width:                      10
+menu.border.color:                      #09040A
+menu.separator.color:                   #09040A
+menu.*.bg:                              flat
+menu.*.bg.color:                        #09040A
+menu.*.text.color:                      #C5C3C3
+menu.*.text.justify:                    center
+menu.*.disabled.text.color:             #09040A
+menu.*.active.text.color:               #09040A
+menu.*.active.bg.color:                 #C5C3C3
+
+#Section: Titlebar
+window.active.title.bg: flat
+window.active.title.bg.color: #09040A
+window.inactive.title.bg: flat
+window.inactive.title.bg.color: #313846
+
+!! Titlebar text
+window.label.text.justify: center
+window.active.label.bg: parentrelative
+window.active.label.text.color: #C5C3C3
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #C5C3C3
+
+!! Window buttons
+window.*.button.*.bg: parentrelative
+window.active.button.*.hover.bg: flat
+window.inactive.button.*.hover.bg: parentrelative
+window.*.button.*.pressed.bg: flat
+
+window.active.button.*.hover.bg.color: #09040A
+window.active.button.*.pressed.bg.color: #09040A
+window.active.button.*.hover.image.color: #bc2546
+window.active.button.*.pressed.image.color: #bc2546
+window.inactive.button.*.pressed.bg.color: #4ab5ff
+
+window.active.button.*.image.color: #C5C3C3
+window.active.button.disabled.image.color: #aaaaaa
+window.inactive.button.*.image.color: #C5C3C3
+window.inactive.button.disabled.image.color: #aaaaaa
+
+!! Borders
+window.active.border.color: #09040A
+window.inactive.border.color: #09040A
+border.width: 0
+padding.width: 8
+padding.height: 10
+window.handle.width: 0
+window.active.client.color:  #09040A
+window.inactive.client.color:  #09040A
+window.client.padding.width: 0
+window.client.padding.height: 0
+
+# Section: osd
+osd.border.width:                       3
+osd.border.color:                       #111111
+osd.bg:                                 flat
+osd.bg.color:                           #09040A
+osd.label.bg:                           flat solid
+osd.label.bg.color:                     #09040A
+osd.label.text.color:                   #C5C3C3
+osd.highlight.bg:                       flat solid
+osd.highlight.bg.color:                 #C5C3C3
+osd.unhighlight.bg:                     flat
+osd.unhighlight.bg.color:               #282c37
+osd.button.unpressed.bg:                flat
+osd.button.unpressed.bg.color:          #282c37
+osd.button.unpressed.*.border.color:    #282c37
+osd.button.pressed.bg:                  flat
+osd.button.pressed.bg.color:            #282c37
+osd.button.pressed.*.border.color:      #282c37
+osd.button.focused.bg:                  flat
+osd.button.focused.bg.color:            #282c37
+osd.button.focused.*.border.color:      #282c37
+osd.button.focused.box.color:           #282c37

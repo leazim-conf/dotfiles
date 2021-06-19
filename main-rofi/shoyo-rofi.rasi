@@ -1,9 +1,12 @@
 * {
-    background-color:            #111111;
-    black:                       #111111;
-    normal-text-color:           #C5C3C3;
-    basic-background-selected:   #616161;
-    //arc-color: #4084D6
+    //arc color:                    #4084D6
+    //black-material:               #111111
+    //deep-blue:                    #313846
+    background-color:               #09040A;
+    normal-text-color:              #C5C3C3;
+    basic-background-selected:      #313846;
+    bg-color:                       #09040A;
+    fg-color:                       #C5C3C3;
 }
 window {
     location:           center;
@@ -11,8 +14,8 @@ window {
     padding:            5px;
     border:             0px;
     border-radius:      0px;
-    color:              @black;
-    background-color:   @black;
+    color:              @bg-color;
+    background-color:   @bg-color;
     spacing:            0;
     children:           [mainbox];
     
@@ -27,7 +30,7 @@ mainbox {
 
 message {
     border:             2px 2px 2px 2px ;
-    border-color:       @black;
+    border-color:       @bg-color;
     text-color:         @normal-text-color;
     padding:            5px;
 }
@@ -36,7 +39,7 @@ inputbar {
     text-color:         @normal-text-color;
     padding:            8px;
     spacing:            0;
-    background-color:   @black;
+    background-color:   @bg-color;
     border:             0px 0px 0px 0px;
     bordercolor:        @normal-text-color;
 }
@@ -56,7 +59,7 @@ element {
     padding: 1px ;
 }
 element.normal.normal {
-    background-color: @black;
+    background-color: @bg-color;
     text-color:       @normal-text-color;
 }
 element.normal.urgent {
@@ -64,23 +67,23 @@ element.normal.urgent {
     text-color:       @normal-text-color;
 }
 element.normal.active {
-    background-color: @black;
+    background-color: @bg-color;
     text-color:       @normal-text-color;
 }
 element.selected.normal {
     background-color: @basic-background-selected;
-    text-color:       @black;
+    text-color:       @bg-color;
 }
 element.selected.urgent {
     background-color: #8B0000;
-    text-color:       @black;
+    text-color:       @bg-color;
 }
 element.selected.active {
-    background-color: @black;
+    background-color: @bg-color;
     text-color:       @normal-text-color;
 }
 element.alternate.normal {
-    background-color: @black;
+    background-color: @bg-color;
     text-color:       @normal-text-color;
 }
 element.alternate.urgent {
@@ -88,7 +91,7 @@ element.alternate.urgent {
     text-color:       @normal-text-color;
 }
 element.alternate.active {
-    background-color: @black;
+    background-color: @bg-color;
     text-color:       @normal-text-color;
 }
 
