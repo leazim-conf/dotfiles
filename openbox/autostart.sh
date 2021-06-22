@@ -1,0 +1,3 @@
+
+nitrogen --restore & 
+polybar example &
