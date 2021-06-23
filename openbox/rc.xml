@@ -365,7 +365,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>tilix</command>
+        <command>urxvt</command>
       </action>
     </keybind>
 
