@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Firefox
+Exec=~/.config/scripts/config-scripts/firefox.sh
+Icon=~/.config/tint2/icons/Firefox.svg
+Type=Applicantion
+Categories=Search
+Terminal=false

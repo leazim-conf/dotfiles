@@ -2,7 +2,7 @@
 
 menus=(" Shutdown" " Restart" " Logout")
 
-CHOICE=$(printf '%s\n' "${menus[@]}" | rofi -dmenu -config $HOME/.config/polybar/scripts/rofi/powermenu.rasi) 
+CHOICE=$(printf '%s\n' "${menus[@]}" | rofi -dmenu -config $HOME/.config/rofi/add-rofi/powermenu.rasi) 
 
 
 if [[ $CHOICE = " Shutdown" ]]; then   

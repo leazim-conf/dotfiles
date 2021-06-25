@@ -1,5 +1,4 @@
 
 nitrogen --restore & 
-polybar example &
-picom --experimental-backends -b
+tint2 &
 xrdb .Xresources

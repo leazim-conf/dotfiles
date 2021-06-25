@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Rofi
+Exec=~/.config/scripts/config-scripts/rofi_search.sh
+Icon=~/.icons/Marwaita-Dark/scalable/apps/chromium-app-list.svg
+Type=Applicantion
+Categories=Search
+Terminal=false
+
