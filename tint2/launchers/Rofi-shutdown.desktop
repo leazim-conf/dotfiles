@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Rofi-shutdown
-Exec=~/.config/scripts/config-scripts/shutdown.sh
-Icon=~/.config/tint2/icons/shutdown-color.svg
-Type=Applicantion
-Categories=Search
-Terminal=false

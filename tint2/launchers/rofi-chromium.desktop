@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Rofi-Chromium
-Exec=~/.config/scripts/config-scripts/chromium.sh
-Icon=~/.config/tint2/icons/chrome.svg
-Type=Applicantion
-Categories=Search
-Terminal=false
