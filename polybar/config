@@ -34,9 +34,9 @@ font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
 font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
 font-4 = "icomoon:size=13;2"
 
-modules-left = rofi  workspaces separator2
+modules-left = rofi  workspaces
 modules-center = date 
-modules-right = separator1 firefox chromium discord network pulseaudio shutdown
+modules-right = firefox chromium discord network pulseaudio shutdown
 
 ;;tray-position = 
 ;;tray-padding = 

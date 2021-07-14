@@ -1,4 +1,3 @@
-
+xrdb ~/.Xresources
 nitrogen --restore & 
-tint2 &
-xrdb .Xresources
+polybar example

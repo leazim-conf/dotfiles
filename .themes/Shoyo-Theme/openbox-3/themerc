@@ -42,8 +42,8 @@ window.inactive.button.disabled.image.color: #aaaaaa
 
 !! Borders
 window.active.border.color: #09040A
-window.inactive.border.color: #09040A
-border.width: 0
+window.inactive.border.color: #313846
+border.width: 2
 padding.width: 8
 padding.height: 10
 window.handle.width: 0
