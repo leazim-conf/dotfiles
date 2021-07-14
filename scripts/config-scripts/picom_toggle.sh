@@ -1,10 +1,10 @@
 #!/bin/bash
 
-process_PID="$(ps -aef | awk '/picom --experimental-backends/ {print $2}')"
+process_PID="$(ps -aef | awk '/picom -b/ {print $2}')"
 PIDs=($process_PID)
 
 if [ ${#PIDs[@]} -ge 2 ]; then
-	exec killall picom && killall compton
+	exec killall picom
 else
-	exec picom --experimental-backends -b
+	exec picom -b
 fi
