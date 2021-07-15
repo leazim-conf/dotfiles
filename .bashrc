@@ -11,8 +11,6 @@
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
-color_prompt=yes
-
 if [ "$color_prompt" = yes ]; then
     PS1='[\033[01;32m\]\u@\h\[\033[00m\]]\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
