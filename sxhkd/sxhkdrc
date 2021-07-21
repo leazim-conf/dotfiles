@@ -13,10 +13,10 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#dmenu 
+#rofi 
 
 alt + @space
-	find /usr/bin/ -executable | dmenu -c -l 15 -fn "Monospace-11"
+	exec ~/.config/scripts/config-scripts/dmenu-ranger.sh
 
 #
 # bspwm hotkeys
