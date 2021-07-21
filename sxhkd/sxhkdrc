@@ -17,7 +17,7 @@ super + Escape
 #rofi 
 
 alt + @space
-	rofi -show drun
+	find /usr/bin/ -executable -type f | cut -d'/' -f4- | dmenu -c -l 15
 
 #
 # bspwm hotkeys
