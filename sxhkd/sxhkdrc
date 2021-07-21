@@ -17,7 +17,7 @@ super + Escape
 #rofi 
 
 alt + @space
-	find /usr/bin/ -executable -type f | cut -d'/' -f4- | dmenu -c -l 15
+	find /usr/bin/ -executable -type f | dmenu -c -l 15 -fn "Monospace-11"
 
 #
 # bspwm hotkeys
