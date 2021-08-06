@@ -5,13 +5,13 @@ include-file = ~/.config/polybar/colors.ini
 include-file = ~/.config/polybar/modules.ini
 include-file = ~/.config/polybar/separator_modules.ini
 
-[bar/example]
+[bar/top]
 width = 100%
 height = 19
-;offset-x = 1%
-;offset-y = 1%
 radius = 0
 fixed-center = true
+monitor = eDP-1
+bottom = false
 
 background = ${colors.main-background}
 foreground = ${colors.main-foreground}
@@ -36,25 +36,58 @@ font-4 = "icomoon:size=13;2"
 
 modules-left = rofi  workspaces
 modules-center = date 
-modules-right = firefox chromium discord network pulseaudio shutdown
-
-;;tray-position = 
-;;tray-padding = 
-;;tray-background = #0063ff
+modules-right = compton discord network pulseaudio shutdown
 
 wm-restack = bspwm
-;;wm-restack = i3
-
-;;override-redirect = true
-
-;;scroll-up = bspwm-desknext
-;;scroll-down = bspwm-deskprev
-
-;;scroll-up = i3wm-wsnext
-;;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;;;;;;;;;;;;;;;;
+;; SECOND BAR ;;
+;;;;;;;;;;;;;;;;
+
+[bar/top_external]
+width = 100%
+height = 19
+radius = 0
+fixed-center = true
+monitor = DP-1
+bottom = false
+
+background = ${colors.main-background}
+foreground = ${colors.main-foreground}
+
+line-size = 3
+line-color = ${colors.main-background}
+
+border-size = 3
+border-color = ${colors.main-background}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Material:style=Regular:pixelsize=10;3"
+font-1 = "Material Icons:style=Bold:size=12;3"
+font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
+font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
+font-4 = "icomoon:size=13;2"
+
+modules-left = rofi  workspaces
+modules-center = date 
+modules-right =
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
 
 [settings]
 screenchange-reload = true
@@ -64,43 +97,6 @@ screenchange-reload = true
 ;;compositing-border = over
 ;;pseudo-transparency = false
 
-
-;;[module/i3]
-;;type = internal/i3
-;;format = <label-state> <label-mode>
-;;index-sort = true
-;;wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-;;label-mode-padding = 2
-;;label-mode-foreground = #000
-;;label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-;;label-focused = %index%
-;;label-focused-background = ${colors.background-alt}
-;;label-focused-underline= ${colors.primary}
-;;label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-;;label-unfocused = %index%
-;;label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-;;label-visible = %index%
-;;label-visible-background = ${self.label-focused-background}
-;;label-visible-underline = ${self.label-focused-underline}
-;;label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-;;label-urgent = %index%
-;;label-urgent-background = ${colors.alert}
-;;label-urgent-padding = 2
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
-
-
+;;[global/wm]
+;;margin-top = 0
+;;margin-bottom = 0
