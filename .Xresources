@@ -26,7 +26,7 @@ URxvt.colorUL: #4682B4
 
 !!!!!!!!!!!! COLORS !!!!!!!!!!!!
 urxvt*foreground: #C5C3C3
-urxvt*background: #101010
+urxvt*background: #1A1B26
 
 
 ! Normal
