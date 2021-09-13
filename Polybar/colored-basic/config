@@ -34,9 +34,9 @@ font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
 font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
 font-4 = "icomoon:size=13;2"
 
-modules-left = rofi  workspaces
+modules-left = workspaces
 modules-center = date 
-modules-right = compton discord network pulseaudio shutdown
+modules-right = compton discord network pulseaudio
 
 wm-restack = bspwm
 
@@ -76,7 +76,7 @@ font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
 font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
 font-4 = "icomoon:size=13;2"
 
-modules-left = rofi  workspaces
+modules-left =  workspaces
 modules-center = date 
 modules-right =
 
