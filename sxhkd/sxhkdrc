@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	urxvt
+	st
 
 # program launcher
 super + @space
@@ -16,7 +16,7 @@ super + Escape
 #rofi 
 
 alt + @space
-	exec ~/.config/scripts/config-scripts/dmenu-ranger.sh
+	exec ~/.config/scripts/config-scripts/dmenu-binaries.sh
 
 #
 # bspwm hotkeys

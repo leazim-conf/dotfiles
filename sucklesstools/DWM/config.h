@@ -6,7 +6,7 @@ static const unsigned int gappx     = 1;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=11", "Font Awesome 5 Brands:style=Bold:size=11" };
+static const char *fonts[]          = { "Liberation Mono:size=11", "Font Awesome 5 Brands:style=Bold:size=11" };
 static const char dmenufont[]       = "monospace:size=10";
 
 static const char black[]        		= "#09040A";
@@ -33,8 +33,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "firefox",  	NULL,       NULL,  				0,       		0,          	2 },
-	{ "discord",    NULL,       NULL,  				0,       		0,            4 },
+	{ "firefox",  	NULL,       NULL,  				1 << 2,       0,          	2 },
+	{ "discord",    NULL,       NULL,  				1 << 3,       0,            4 },
 };
 
 /* layout(s) */
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu-binaries.sh", NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 #include "shift-tools.c"
 
