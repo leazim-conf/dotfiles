@@ -1,5 +1,6 @@
 #case fish
-#exec fish
+transset-df "0.80" --id "$WINDOWID" >/dev/null
+exec fish
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -121,4 +122,4 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 #export PATH=$PATH:/usr/bin/clang-11
 
 ##KEYBOARD EXPORTS
-setxkbmap -model abnt2 -layout br -variant abnt2
+#setxkbmap -model abnt2 -layout br -variant abnt2
