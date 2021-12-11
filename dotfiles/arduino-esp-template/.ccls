@@ -1,8 +1,0 @@
-clang
--std=c++17
--stdlib=libc++
--I/home/shoyo/.arduino15/packages/arduino/hardware/avr/1.8.3/cores/arduino
--I/home/shoyo/.arduino15/packages/arduino/hardware/avr/1.8.3/variants/standard
--I/home/shoyo/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/avr/include
--I/home/shoyo/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7/include
--DUBRRH
