@@ -1,0 +1,139 @@
+* {
+    //arc color:                    #4084D6
+    //black-material:               #111111
+    //deep-blue:                    #313846
+    background-color:               #09040A;
+    normal-text-color:              #C5C3C3;
+    basic-background-selected:      #313846;
+    bg-color:                       #09040A;
+    fg-color:                       #C5C3C3;
+}
+window {
+    location:           center;
+    anchor:             center;
+    padding:            5px;
+    border:             0px;
+    border-radius:      0px;
+    color:              @bg-color;
+    background-color:   @bg-color;
+    spacing:            0;
+    children:           [mainbox];
+    
+}
+
+mainbox {
+    spacing:            0;
+    border:             0;
+    padding:            0;
+    children:           [inputbar, message,listview];
+}
+
+message {
+    border:             2px 2px 2px 2px ;
+    border-color:       @bg-color;
+    text-color:         @normal-text-color;
+    padding:            5px;
+}
+
+inputbar {
+    text-color:         @normal-text-color;
+    padding:            8px;
+    spacing:            0;
+    background-color:   @bg-color;
+    border:             0px 0px 0px 0px;
+    bordercolor:        @normal-text-color;
+}
+
+listview {
+    fixed-height:       0;
+    border:             0px 0px 0px 0px ;
+    border-color:       @normal-text-color;
+    spacing:            6px ;
+    scrollbar:          false;
+    padding:            5px 5px 5px;
+    lines:              15;
+}
+
+element {
+    border:  0;
+    padding: 1px ;
+}
+element.normal.normal {
+    background-color: @bg-color;
+    text-color:       @normal-text-color;
+}
+element.normal.urgent {
+    background-color: #8B0000;
+    text-color:       @normal-text-color;
+}
+element.normal.active {
+    background-color: @bg-color;
+    text-color:       @normal-text-color;
+}
+element.selected.normal {
+    background-color: @basic-background-selected;
+    text-color:       @bg-color;
+}
+element.selected.urgent {
+    background-color: #8B0000;
+    text-color:       @bg-color;
+}
+element.selected.active {
+    background-color: @bg-color;
+    text-color:       @normal-text-color;
+}
+element.alternate.normal {
+    background-color: @bg-color;
+    text-color:       @normal-text-color;
+}
+element.alternate.urgent {
+    background-color: #8B0000;
+    text-color:       @normal-text-color;
+}
+element.alternate.active {
+    background-color: @bg-color;
+    text-color:       @normal-text-color;
+}
+
+element-icon {
+    size:                           24px;
+    border:                         0px;
+}
+scrollbar {
+    width:        5px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+
+//mode-switcher {
+//    border:       2px 0px 0px ;
+//    border-color: #??????;
+//}
+//button.selected {
+//    background-color: #??????;
+//    text-color:       #??????;
+//}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-text-color;
+}
+
+entry {
+    spacing:    0;
+    text-color: @normal-text-color;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-text-color;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-text-color;
+}

@@ -1,0 +1,102 @@
+
+;;.-.-.-.-.-.-.-.-.-.-.-.-.-.-. INCLUDE FILE
+
+include-file = ~/.config/polybar/colors.ini 
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/separator_modules.ini
+
+[bar/top]
+width = 100%
+height = 19
+radius = 0
+fixed-center = true
+monitor = eDP-1
+bottom = false
+
+background = ${colors.main-background}
+foreground = ${colors.main-foreground}
+
+line-size = 3
+line-color = ${colors.main-background}
+
+border-size = 3
+border-color = ${colors.main-background}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Material:style=Regular:pixelsize=10;3"
+font-1 = "Material Icons:style=Bold:size=12;3"
+font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
+font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
+font-4 = "icomoon:size=13;2"
+
+modules-left = workspaces
+modules-center = date 
+modules-right = compton discord network pulseaudio
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;;;;;;;;;;;;;;;;
+;; SECOND BAR ;;
+;;;;;;;;;;;;;;;;
+
+[bar/top_external]
+width = 100%
+height = 19
+radius = 0
+fixed-center = true
+monitor = DP-1
+bottom = false
+
+background = ${colors.main-background}
+foreground = ${colors.main-foreground}
+
+line-size = 3
+line-color = ${colors.main-background}
+
+border-size = 3
+border-color = ${colors.main-background}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Material:style=Regular:pixelsize=10;3"
+font-1 = "Material Icons:style=Bold:size=12;3"
+font-2 = "Iosevka Nerd Font:style=Bold:pixelsize=10;2"
+font-3 = "Font Awesome 5 Brands:style=Bold::pixelsize=12;3"
+font-4 = "icomoon:size=13;2"
+
+modules-left = rofi  workspaces
+modules-center = date 
+modules-right =
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+
+[settings]
+screenchange-reload = true
+;;compositing-background = xor
+;;compositing-background = screen
+;;compositing-foreground = source
+;;compositing-border = over
+;;pseudo-transparency = false
+
+;;[global/wm]
+;;margin-top = 0
+;;margin-bottom = 0
