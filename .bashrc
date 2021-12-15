@@ -1,5 +1,5 @@
 #case fish
-transset-df "0.80" --id "$WINDOWID" >/dev/null
+transset-df "0.85" --id "$WINDOWID" >/dev/null
 exec fish
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -109,6 +109,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 ## PYENV EXPORTS
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -123,3 +124,8 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 ##KEYBOARD EXPORTS
 #setxkbmap -model abnt2 -layout br -variant abnt2
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+. "$HOME/.cargo/env"
