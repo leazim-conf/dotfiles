@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+    { "key": "ctrl+f",          "command": "actions.find" },
+    { "key": "alt+left",        "command": "workbench.action.navigateBack" },
+    { "key": "alt+right",       "command": "workbench.action.navigateForward" },
+    { "key": "alt+l",           "command": "workbench.action.decreaseViewSize" },
+    { "key": "alt+l",           "command": "workbench.action.increaseViewSize" },
+    { "key": "ctrl+\\",         "command": "workbench.action.terminal.toggleTerminal" },
+    { "key": "ctrl+shift+p",    "command": "workbench.action.showCommands" },
+]
