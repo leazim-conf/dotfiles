@@ -15,10 +15,10 @@ bottom = false
 background = ${colors.main-background}
 foreground = ${colors.main-foreground}
 
-line-size = 3
+line-size = 1
 line-color = ${colors.main-background}
 
-border-size = 1
+border-size = 3
 border-color = ${colors.main-background}
 
 padding-left = 0
