@@ -1,29 +1,52 @@
-#! /bin/sh
+#!/usr/bin/env bash
+####################
+##  SOURCE FILES  ##
+####################
+source $HOME/.config/scripts/config-scripts/setup-monitors.sh
+source $HOME/.config/bspwm/workspaces 
+source $HOME/.config/bspwm/externals
+source $HOME/.config/bspwm/configs 
+#source $HOME/.config/bspwm/theme
 
-if [[ $(xrandr -q | grep 'DP-1 connected') ]]; then
-  xrandr --output DP-1 --mode 1366x768 --rotate normal --left-of eDP-1
-fi
+#######################
+##  SET UP MONITORS  ##
+#######################
+configuration_monitor
+configuration_workspaces
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-~/.config/polybar/simple/launch.sh &
+#################
+##  EXTERNALS  ##
+#################
 
-bspc monitor -d 1 2 3 4 5
-bspc monitor DP-1 -d 6 7 8 9
-bspc config border_width         3
-bspc config window_gap           8
+external_startup
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+###############
+##  CONFIGS  ##
+###############
+
+global_configs
+#bspc config border_width         3
+#bspc config window_gap           8
+#bspc config merge_overlapping_monitors true
+#bspc desktop Desktop --remove &
+
+#bspc config split_ratio          0.52
+#bspc config borderless_monocle   true
+#bspc config gapless_monocle      true
+
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a firefox desktop='^3'
+#bspc rule -a brave desktop='^3'
+#bspc rule -a Zathura state=tiled
+#bspc rule -a discord desktop='^4'
+#bspc rule -a Screenkey manage=off
+
+#############
+##  THEME  ##
+#############
 
 ## border colors
 bspc config active_border_color  '#C3C3C5'
 bspc config normal_border_color  '#0d1019' # #09040A
 bspc config focused_border_color '#C3C3C5'
 
-bspc rule -a Chromium desktop='^2'
-bspc rule -a firefox desktop='^3'
-bspc rule -a brave desktop='^3'
-bspc rule -a Zathura state=tiled
-bspc rule -a discord desktop='^4'
-bspc rule -a Screenkey manage=off

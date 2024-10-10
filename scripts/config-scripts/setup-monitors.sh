@@ -35,11 +35,12 @@ function setup_monitors() {
 
   xrandr --output "$monitor" --mode "${resolutions[$monitor]}"
   log_info "Applied resolution: ${resolutions[$monitor]} to $monitor" "$log_file"
-
+  local teste=$(xrandr | grep " connected")
+  echo "$teste"
   done
 }
 
-function configuration() {
+function configuration_monitor() {
   
   setup_monitors
   
@@ -49,5 +50,3 @@ function configuration() {
   fi
   log_info "Set up all monitors" "${log_file}"
 }
-
-configuration

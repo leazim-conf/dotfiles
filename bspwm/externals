@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+source $HOME/.config/scripts/setup-scripts/logs.sh
+local log_file_bspwm="$HOME/.local/share/logs/bspwm.log"
+
+function external_startup() {
+
+  ## SXHKD
+  if [[ ! $(pidof -q sxhkd) ]]; then 
+    sxhkd &
+    log_info "Started sxhkd" "$log_file_bspwm"
+  else
+    log_info "Cant start sxhkd" "$log_file_bspwm"
+  fi 
+
+  ## POLYBAR
+  ~/.config/polybar/simple/launch.sh &
+
+}
