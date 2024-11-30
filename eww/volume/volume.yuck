@@ -1,0 +1,95 @@
+(defwindow volume-window
+  :monitor 0
+  :geometry 
+    (geometry :x "95%"
+              :y "4%"
+              :height "180px"
+              :width "40px") 
+(volume-box))
+
+
+(defwidget volume-box []
+  (box
+    :class "volume-box"
+    :orientation "v"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    (volume_animation :volume volume-value)
+    (volume-button-box :volume volume-value)
+    (config-button-box)
+  )
+)
+
+(defwidget volume_animation [volume]
+  (revealer
+    :transition "slideup"
+    :reveal true
+    (box 
+      :class "volume_osd"
+      :orientation "v"
+      :space-evenly false
+      (volume-slider-box :volume volume)
+    )
+  )
+)
+
+(defpoll volume-value
+  :interval "1ms" "pamixer --get-volume-human | awk '{if ($1 ~ /^[0-9]+%$/) {sub(\"%\", \"\", $1); print $1} else if ($1 == \"muted\") {print $1}}'"
+)
+
+(defwidget volume-slider-box [volume]
+  (box
+    :class "volume-slider-box"
+    :orientation "v"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    ;;(label 
+    ;;  :class "volume-icon" 
+    ;;  :justify "center"
+    ;;  :halign "center"
+    ;;  :valign "center"
+    ;:  text {volume == "muted" ? "󰸈" : volume < 33 ? "" : volume < 67 ? "" : ""})
+    (scale 
+        :class "volume-slider"
+        :orientation "v"
+        :flipped true
+        :min 0
+        :max 100
+        :active {volume != "muted"}
+        :value {volume == "muted" ? 0 : volume}
+        :onchange "pamixer --set-volume {}")
+  )
+)
+
+(defwidget volume-button-box [volume]
+    (box 
+      :class "volume-button-box" 
+      :orientation "h" 
+      :halign "center"
+      :valign "center" 
+      :space-evenly false   
+      (button 
+        :class "vol-button"
+        :onclick 
+        "pamixer -t"
+        '${volume == "muted" ? "󰝟" : ""}'
+      )
+  )
+)
+
+(defwidget config-button-box []
+    (box 
+      :class "config-button-box" 
+      :orientation "h" 
+      :halign "center"
+      :valign "center" 
+      :space-evenly false   
+      (button 
+        :class "conf-button"
+        :onclick 
+        "pavucontrol" "󰒓"
+      )
+  )
+)

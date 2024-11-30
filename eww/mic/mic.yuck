@@ -1,0 +1,95 @@
+(defwindow volume-mic-window
+  :monitor 0
+  :geometry 
+    (geometry :x "95%"
+              :y "4%"
+              :height "180px"
+              :width "40px") 
+(volume-mic-box))
+
+
+(defwidget volume-mic-box []
+  (box
+    :class "volume-box"
+    :orientation "v"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    (volume_animation :volume volume-mic-value)
+    (volume-mic-button-box :volume volume-mic-value)
+    (config-mic-button-box)
+  )
+)
+
+(defwidget volume_animation [volume]
+  (revealer
+    :transition "slideup"
+    :reveal true
+    (box 
+      :class "volume_osd"
+      :orientation "v"
+      :space-evenly false
+      (volume-mic-slider-box :volume volume-mic-value)
+    )
+  )
+)
+
+(defpoll volume-mic-value
+  :interval "1ms" "pamixer --get-volume-human --source 50 | awk '{if ($1 ~ /^[0-9]+%$/) {sub(\"%\", \"\", $1); print $1} else if ($1 == \"muted\") {print $1}}'"
+)
+
+(defwidget volume-mic-slider-box [volume]
+  (box
+    :class "volume-slider-box"
+    :orientation "v"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    ;;(label 
+    ;;  :class "volume-icon" 
+    ;;  :justify "center"
+    ;;  :halign "center"
+    ;;  :valign "center"
+    ;:  text {volume == "muted" ? "󰸈" : volume < 33 ? "" : volume < 67 ? "" : ""})
+    (scale 
+        :class "volume-mic-slider"
+        :orientation "v"
+        :flipped true
+        :min 0
+        :max 100
+        :active {volume != "muted"}
+        :value {volume == "muted" ? 0 : volume}
+        :onchange "pamixer --set-volume {}")
+  )
+)
+
+(defwidget volume-mic-button-box [volume]
+    (box 
+      :class "vol-mic-button-box" 
+      :orientation "h" 
+      :halign "center"
+      :valign "center" 
+      :space-evenly false   
+      (button 
+        :class "vol-button"
+        :onclick 
+        "pamixer -t --source 50"
+        '${volume == "muted" ? "" : ""}'
+      )
+  )
+)
+
+(defwidget config-mic-button-box []
+    (box 
+      :class "conf-mic-button-box" 
+      :orientation "h" 
+      :halign "center"
+      :valign "center" 
+      :space-evenly false   
+      (button 
+        :class "conf-button"
+        :onclick 
+        "pavucontrol" "󰒓"
+      )
+  )
+)
