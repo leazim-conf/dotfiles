@@ -1,0 +1,48 @@
+.volume-input-box {
+  all: unset;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.volume-input-slider-box scale trough highlight {
+  all: unset;
+  background-color: #51AFEF; 
+  border-radius: 5px;
+}
+
+.volume-input-slider-box scale trough {
+  all: unset;
+  background-color: #444b59;
+  border-radius: 5px; 
+  min-height: 6px;
+  min-width: 130px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}
+
+.volume-input-button {
+  color: #c0caf5;
+  background: #383853;
+  border-radius: 5px;
+  border-color: #383853;
+  font-size : 18px;
+  min-height: 24px;
+  min-width: 24px;
+  margin: 2px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}
+
+.config-input-button {
+  color: #c0caf5;
+  background: #383853;
+  border-radius: 5px;
+  border-color: #383853;
+  font-size : 18px;
+  min-height: 24px;
+  min-width: 24px;
+  margin: 2px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+}

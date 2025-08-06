@@ -1,0 +1,79 @@
+(defpoll volume-input
+  :interval "1ms" "pamixer --source 58 --get-volume-human | awk '{if ($1 ~ /^[0-9]+%$/) {sub(\"%\", \"\", $1); print $1} else if ($1 == \"muted\") {print $1}}'"
+)
+
+(defwidget volume-input-box []
+  (box
+    :class "volume-input-box"
+    :orientation "h"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    (volume-input-animation :volume-input volume-input)
+    (volume-input-button-box :volume-input volume-input)
+    (config-input-button-box)
+  )
+)
+
+(defwidget volume-input-animation [volume-input]
+  (revealer
+    :transition "slideright"
+    :reveal true
+    (box
+      :class "volume-input-osd"
+      :orientation "h"
+      :space-evenly false
+      (volume-input-slider-box :volume-input volume-input)
+    )
+  )
+)
+
+(defwidget volume-input-slider-box [volume-input]
+  (box
+    :class "volume-input-slider-box"
+    :orientation "h"
+    :halign "center"
+    :valign "center"
+    :space-evenly false
+    (scale
+        :class "volume-input-slider"
+        :orientation "h"
+        :flipped false
+        :min 0
+        :max 100
+        :active {volume-input != "muted"}
+        :value {volume-input == "muted" ? 0 : volume-input}
+        :onchange "pamixer --source 58 --set-volume {}")
+  )
+)
+
+(defwidget volume-input-button-box [volume-input]
+    (box 
+      :class "volume-input-button-box"
+      :orientation "h"
+      :halign "center"
+      :valign "center"
+      :space-evenly false
+      (button
+        :class "volume-input-button"
+        :onclick
+        "pamixer -t --source 58"
+        '${volume-input == "muted" ? "" : ""}'
+      )
+  )
+)
+
+(defwidget config-input-button-box []
+    (box 
+      :class "config-input-button-box"
+      :orientation "h"
+      :halign "center"
+      :valign "center"
+      :space-evenly false
+      (button 
+        :class "config-input-button"
+        :onclick 
+        "pavucontrol" "󰒓"
+      )
+  )
+)

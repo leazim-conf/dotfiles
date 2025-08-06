@@ -1,0 +1,80 @@
+(defpoll volume-output
+  :interval "1ms" "pamixer --get-volume-human | awk '{if ($1 ~ /^[0-9]+%$/) {sub(\"%\", \"\", $1); print $1} else if ($1 == \"muted\") {print $1}}'"
+)
+
+(defwidget volume-output-box []
+  (box
+    :class "volume-output-box"
+    :orientation "h"
+    :halign "center"
+    :valign "center"
+    :space-evenly false
+    (volume-output-animation :volume-output volume-output)
+    (volume-output-button-box :volume-output volume-output)
+    (config-output-button-box)
+  )
+)
+
+(defwidget volume-output-animation [volume-output]
+  (revealer
+    :transition "slideright"
+    :reveal true
+    (box
+      :class "volume-output-osd"
+      :orientation  "h"
+      :space-evenly false
+      (volume-output-slider-box :volume-output volume-output)
+    )
+  )
+)
+
+(defwidget volume-output-slider-box [volume-output]
+  (box
+    :class "volume-output-slider-box"
+    :orientation "h"
+    :halign "center"
+    :valign "center" 
+    :space-evenly false
+    (scale
+        :class "volume-output-slider"
+        :orientation "h"
+        :flipped false
+        :min 0
+        :max 100
+        :active {volume-output != "muted"}
+        :value {volume-output == "muted" ? 0 : volume-output}
+        :onchange "pamixer --set-volume {}"
+    )
+  )
+)
+
+(defwidget volume-output-button-box [volume-output]
+    (box 
+      :class "volume-output-button-box"
+      :orientation "h"
+      :halign "center"
+      :valign "center"
+      :space-evenly false
+      (button
+        :class "volume-output-button"
+        :onclick
+        "pamixer -t"
+        '${volume-output == "muted" ? "󰖁" : ""}'
+      )
+  )
+)
+
+(defwidget config-output-button-box []
+    (box 
+      :class "config-output-button-box"
+      :orientation "h"
+      :halign "center"
+      :valign "center"
+      :space-evenly false
+      (button 
+        :class "config-output-button"
+        :onclick 
+        "pavucontrol" "󰒓"
+      )
+  )
+)
